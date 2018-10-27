@@ -1,0 +1,115 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 3
+   Case Problem 3
+   
+   Layout Style Sheet for A Soldier's Scrapbook
+   Author: Maria De Jesus Rizo
+   Date:   10.26.18
+   
+   Filename: ss_layout.css
+
+*/
+
+
+/* Article Styles */
+/* The selector states that the properties listed will affect the article elements within the html document. the float left property states that the article will be floated to the left of its container. The width property states that the article element will have a width of 384px in its container */
+article {
+    float: left;
+    width: 384px;
+}
+
+
+/* First Line and Drop Cap Styles */
+/* The selector below states that the first line of the first p element that is a child of the article element will be affected. The font size property specifies the font size of the text affected. The font variant property says that the text affected will be in small caps. */
+article>p:first-of-type::first-line {
+    font-size: 1.25em;
+    font-variant: small-caps;
+}
+
+/* Similar to the selector above, the only difference being that this is affecting the first letter and not the fist line. The font family property specifies the font of the text being affected. the line heigth property states that there will be a line height of .8em. The margin left and right properties specify the left and right margin of the text.  */
+article>p:first-of-type::first-letter {
+    font-size: 4em;
+    font-family: serif;
+    float: left;
+    line-height: .8em;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+/* Aside Styles */
+/* The aside selector states that aside elements int he html document will be affected by the properties listed.  */
+aside {
+    width: 768px;
+    float: left;
+}
+
+
+/* Map Styles */
+/* The selector below states that the  properties will be applied to the div element with an id of battleMap nested within the aside element. the marging top and bottom properties set the top nd bottom marging to 20px. The margin left and margin right auto horizontally center the aside. The relative position property states the positioning of the element on the page. */
+aside div#battleMap {
+    width: 688px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/* The selector states that properties listed will be appied to img elements with an id of mapImage. the display block property states that the element will be displayed on the page with the properties of a block.  */
+img#mapImage {
+    display: block;
+    width: 100%;
+}
+
+
+/* Interactive Map Styles */
+/* The selector states that a elements with a class of battleMarkers nested within the div element will be affected.  w */
+div a.battleMarkers {
+    position: absolute;
+}
+
+/* All a#marker(number) selectors will be affected by the properties listed. The top and left properties specify the coordinates of the markers. This comments applies to all a#marker selectors.  */
+a#marker1 {
+    top: 220px;
+    left: 340px;
+}
+
+a#marker2 {
+    top: 194px;
+    left: 358px;
+}
+
+a#marker3 {
+    top: 202px;
+    left: 400px;
+}
+
+a#marker4 {
+    top: 217px;
+    left: 425px;
+}
+
+a#marker5 {
+    top: 229px;
+    left: 498px;
+}
+
+a#marker6 {
+    top: 246px;
+    left: 544px;
+}
+
+
+/* Map Information Styles */
+/* The selector below states that the div element with a class fo mapInfo will be affected. The display none property within hides the content within the div element.   */
+div.mapInfo {
+    display: none;
+}
+
+/* The selector below states that the a elements in the html with the battleMarkers class will be affected when in the state of hover. The rest of the selector states that the properties will also be applies to the div with class of mapInfo. */
+a.battleMarkers:hover+div.mapInfo {
+    display: block;
+}
